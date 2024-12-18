@@ -1,0 +1,125 @@
+{% extends 'master/master_page.html' %}
+{% load static %}
+
+{% block title %}
+    About Us: Education Umbrella
+{% endblock %}
+
+
+{% block section %}
+<div id="profile_page">
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">About Us</h1>
+                    <p class="text-white text-justify">
+                        At Education Umbrella, we specialize in helping students achieve their dreams of studying at top universities worldwide by providing personalized guidance and comprehensive support. From university selection and application preparation to visa assistance and additional services like online payments, document attestation, and obtaining essential registrations such as NIF, NISS, and SNS, we ensure a seamless study abroad experience. With a dedicated team and a global network of partner institutions, we are committed to making your international education journey smooth, stress-free, and successful.
+                    </p>
+                    <!-- <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                        </ol>
+                    </nav> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3 mb-5">Our Services</h6>
+                <!-- <h1 class="mb-5">Helping you every step of the way for a seamless study abroad experience</h1> -->
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <h5 class="mb-3">University Selection</h5>
+                            <p>Help choose suitable programs and universities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <h5 class="mb-3">Application Support</h5>
+                            <p>Assist with forms, essays, and document submission</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <h5 class="mb-3">Visa Assistance</h5>
+                            <p>Guide through the visa application process</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                            <h5 class="mb-3">Pre/Post-Arrival Support</h5>
+                            <p>Aid with accommodation, cultural tips, and settling in</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="img-fluid position-absolute w-100 h-100" src="{% static '/img/about.jpg' %}" alt="" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
+                    <h1 class="mb-4">Welcome to Education Umbrella</h1>
+                    <p class="mb-4">At Education Umbrella, we specialize in connecting students with world-class educational opportunities across the globe. Our mission is to simplify the complex process of university admissions by providing personalized guidance, expert support, and comprehensive services.</p>
+                    <p class="mb-4">With a dedicated team of professionals, we assist students in selecting the best universities, preparing applications, securing visas, and transitioning smoothly to their new academic environment. We are committed to helping students achieve their dreams of studying abroad with confidence and ease.</p>
+                    <p class="mb-4">Education Umbrella – Your trusted partner in international education.</p>
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Personalized Guidance</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Application Support</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Visa and Immigration Help</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Global Partnerships</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Pre-Departure Assistance</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Ongoing Support</p>
+                        </div>
+                    </div>
+                    <!-- <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+</div>
+{% endblock %}

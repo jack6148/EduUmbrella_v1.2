@@ -1,0 +1,112 @@
+{% extends 'master/master_page.html' %}
+{% load static %}
+
+{% block title %}
+    Submit Profile
+{% endblock %}
+
+
+{% block section %}
+<div id="profile_page">
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Profile</h1>
+                    <p class="text-white">Share your profile with us, and we will carefully analyze it to identify the universities that best align with your academic qualifications, career goals, and preferences. After the analysis, we will contact you via email or WhatsApp with the best options tailored to you.</p>
+                    <!-- <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">About</li>
+                        </ol>
+                    </nav> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Start Your Journey with Us</h6>
+                <h1 class="mb-5">Submit Your Profile</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-12 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                    <form action="submit_profile" method="POST" id="submit_profile" class="card-body cardbody-color p-lg-5" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                    <label for="name">Your Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
+                                    <label for="email">Your Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone Number">
+                                    <label for="Phone">Your Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Your Whatsapp Number">
+                                    <label for="Whatsapp">Your Whatsapp Number</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-control" name="program" id="program" style="background-color: white;">
+                                        <option value="0">-- Select --</option>
+                                        <option value="1">Bachelor</option>
+                                        <option value="2">Master's</option>
+                                        <option value="3">PhD</option>
+                                    </select>
+                                    <!-- <input type="text" class="form-control" id="email" placeholder="Your Whatsapp Number"> -->
+                                    <label for="Whatsapp">Choose Your Program</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="study" id="study" placeholder="Area of Study">
+                                    <label for="study">Area of Study (Example: Computer Science / Economics / Fine Arts)</label>
+                                </div>
+                            </div>
+
+                            <!-- <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <label for="subject">Subject</label>
+                                </div>
+                            </div> -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Leave a message here" name="qualifications" id="qualifications" style="height: 150px"></textarea>
+                                    <label for="qualifications">Academic Qualifications (Shortly Explain)</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+</div>
+{% endblock %}
