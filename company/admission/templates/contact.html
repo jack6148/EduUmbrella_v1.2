@@ -47,7 +47,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Office</h5>
-                            <p class="mb-0">Praça do Giraldo, Évora, Portugal</p>
+                            <p class="mb-0">Rua Romão Ramalho 59, Évora, Portugal</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-3">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Mobile</h5>
-                            <p class="mb-0">+351 920 123456</p>
+                            <p class="mb-0">+351 920 757467</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -71,34 +71,35 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.909330586049!2d-7.914250261058175!3d38.57078689907283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19e4dc3a52c32f%3A0x6493dbd63a9254c1!2sPra%C3%A7a%20do%20Giraldo%2C%207000-661%20%C3%89vora!5e1!3m2!1spt-PT!2spt!4v1733348804099!5m2!1spt-PT!2spt"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.0137370882762!2d-7.91298092353323!3d38.56874837179608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19e4d9560a6181%3A0x2be037428d567c55!2sCol%C3%A9gio%20Luis%20Ant%C3%B3nio%20Verney!5e1!3m2!1sen!2spt!4v1737579648677!5m2!1sen!2spt"
                         frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </div>
                 <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                    <form>
+                    <form action="contact" method="POST" id="contact" class="card-body cardbody-color p-lg-5" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                     <label for="name">Your Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
                                     <label for="subject">Subject</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <textarea class="form-control" id="message" name="message" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
                                     <label for="message">Message</label>
                                 </div>
                             </div>

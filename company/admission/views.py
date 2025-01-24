@@ -52,8 +52,21 @@ def index(request):
     }
     return render(request, 'index.html', context)
 
-def notification(request):
-    context = {}
+def notification(request, id):
+
+    title = ""
+    message = ""
+    if id == '1':
+        title = "Submission Received"
+        message = "Thank you for submitting your information. We will get in touch with you shortly via email or WhatsApp."
+    elif id == '2':
+        title = "Thnak You"
+        message = "We have received your query and will contact you shortly via email."
+
+    context = {
+        'title': title,
+        'message': message
+    }
     return render(request, 'notification.html', context)
 
 def universities(request):
@@ -73,6 +86,36 @@ def profile(request, id):
         study = request.POST.get('study')
         qualifications = request.POST.get('qualifications')
 
+        program_name = "Bachelor" if program == '1' else "Master's" if program == '2' else "Ph.D"
+        # Send Mail 
+        subject = "[Education Umbrella] Submission of New Profile Entry"
+        msgBody = '''
+        Dear Admin,
+
+        We would like to inform you about a new profile entry. The details are as follows:
+        
+        Name: {0}
+        E-Mail: {1}
+        Phone: {2}
+        Whatsapp: {3}
+        Program: {4}
+        Study Area: {5}
+        Qualification: {6}
+
+
+        Note: Kindly respond at your earliest convenience.
+
+
+        Kind Regards,
+        Education Umbrella Team
+        [System]
+
+        Education Umbrella is a project of Redondev IT.
+        '''.format(name, email, phone, whatsapp, program_name, study, qualifications)
+
+        mail_status = send_email('jack6148@gmail.com', subject, msgBody)
+        # Send Mail
+
         profile = Client_Profile()
         profile.name = name
         profile.email = email
@@ -85,36 +128,8 @@ def profile(request, id):
         profile.created_date = timezone.now()
 
         profile.save()
-        response = redirect('/notification')
+        response = redirect('/notification/1')
         return response
-
-        # temporary 
-        # subject = "[Education Umbrella] [Urgent] Mail Notification !!!"
-        # msgBody = '''
-        # Dear {0} {1},
-
-        # Thank you for requesting your birth certificate.
-
-        # Your unique code to access the certificate is:
-
-        # {2}
-
-        # Please note: This code is valid until {3}. Make sure to use it before the expiration date.
-
-        # To use this code, please visit the following link: http://127.0.0.1:8000/BC/generateBC
-
-        # *Important Information*
-        # - This code is valid for one-time use only.
-        # - Please use it promptly to access your certificate.
-        # - If you face any issues, feel free to contact our support team.
-
-
-        # Kind Regards,
-        # Education Umbrella Team [System]
-        # '''.format(person.first_name, person.last_name, generated_birth_code, valid_date)
-
-        # mail_status = send_email(person.email, subject, msgBody)
-        # temporary
     else:
         context = {}
         return render(request, 'submit_profile.html', context)
@@ -124,8 +139,53 @@ def additional(request):
     return render(request, 'additional.html', context)
 
 def contact(request):
-    context = {}
-    return render(request, 'contact.html', context)
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        # Send Mail 
+        subject = "[Education Umbrella] Submission of New Message Entry"
+        msgBody = '''
+        Dear Admin,
+
+        We would like to inform you about a new Message entry. The details are as follows:
+        
+        Name: {0}
+        E-Mail: {1}
+        Subject: {2}
+        Message: {3}
+
+
+        Note: Kindly respond at your earliest convenience.
+
+
+        Kind Regards,
+        Education Umbrella Team
+        [System]
+
+        Education Umbrella is a project of Redondev IT.
+        '''.format(name, email, subject, message)
+
+        mail_status = send_email('jack6148@gmail.com', subject, msgBody)
+        # Send Mail
+
+        query = Client_Query()
+        query.name = name
+        query.email = email
+        query.subject = subject
+        query.message = message
+        query.created_by = 1
+        query.created_date = timezone.now()
+
+        query.save()
+        response = redirect('/notification/2')
+        return response
+
+    else:
+        context = {}
+        return render(request, 'contact.html', context)
 
 def about(request):
     context = {}

@@ -36,3 +36,17 @@ class Client_Profile(models.Model):
     created_date = models.DateTimeField()
     modified_by = models.IntegerField(null = True)
     modified_date = models.DateTimeField(null = True)
+
+class Client_Query(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length = 500, null=True)
+    email = models.CharField(max_length = 100, null=True)
+    subject = models.CharField(max_length = 5000, null=True)
+    message = models.CharField(max_length = 5000, null=True)
+    attribute_1 = models.CharField(max_length = 500, null=True)
+    attribute_2 = models.CharField(max_length = 500, null=True)
+    attribute_3 = models.CharField(max_length = 500, null=True)
+    created_by = models.IntegerField()
+    created_date = models.DateTimeField()
+    modified_by = models.IntegerField(null = True)
+    modified_date = models.DateTimeField(null = True)
